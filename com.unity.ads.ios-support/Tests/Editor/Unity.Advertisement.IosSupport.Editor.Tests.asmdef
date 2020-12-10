@@ -1,0 +1,19 @@
+{
+    "name": "Unity.Advertisement.IosSupport.Editor.Tests",
+    "references": [
+        "Unity.Advertisement.IosSupport",
+        "Unity.Advertisement.IosSupport.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

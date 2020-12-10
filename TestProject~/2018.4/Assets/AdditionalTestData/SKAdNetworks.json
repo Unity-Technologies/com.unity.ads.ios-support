@@ -1,0 +1,19 @@
+{
+      "company_name": "SSP",
+      "company_address": "SSP, address, country",
+      "company_domain": "company.com",
+      "skadnetwork_ids": [
+        {
+            "entity_name": "DSP1",
+            "entity_domain": "DSP1.com",
+            "skadnetwork_id": "4FZDC2EVR5.skadnetwork",
+            "creation_date": "2020-08-21T00:00:00Z"
+        },
+        {
+            "entity_name": "MMP1",
+            "entity_domain": "MMP1.com",
+            "skadnetwork_id": "V72QYCH5UU.skadnetwork",
+            "creation_date": "2020-08-25T00:00:00Z"
+        }
+      ]
+    }

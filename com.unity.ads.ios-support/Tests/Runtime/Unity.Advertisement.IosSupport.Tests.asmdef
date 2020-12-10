@@ -1,0 +1,16 @@
+{
+    "name": "Unity.Advertisement.IosSupport.Tests",
+    "references": [
+        "Unity.Advertisement.IosSupport"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

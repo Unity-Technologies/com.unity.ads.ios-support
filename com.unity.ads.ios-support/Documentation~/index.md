@@ -1,4 +1,4 @@
-# Using this package
+# Using the iOS 14 support package
 This package supports Apple's SKAdNetwork and AppTrackingTransparency frameworks for your made-with-Unity iOS application, by aggregating proper ad network IDs and providing access to relevant Apple developer APIs.
 
 ## Installing the package
@@ -14,26 +14,3 @@ The iOS14 Support package will automatically aggregate an updated [list of adver
 2. Check the resulting *Info.plist* file to ensure that your `SKAdNetworkItems` are as expected. If necessary, manually add any additional `SKAdNetworkIdentifier` dictionaries to the array.
 
 For more information, see documentation on [modifying the properties list](https://unityads.unity3d.com/help/ios/integration-guide-ios#modifying-the-properties-list).
-
-## Apple developer API extensions
-This package provides access to the following Apple developer APIs:
-
-```
-public static void SkAdNetworkUpdateConversionValue(int conversionValue)
-```
-This method allows you to [update the attribution conversion value](https://developer.apple.com/documentation/storekit/skadnetwork/3566697-updateconversionvalue?language=objc).
-
-```
-SkAdNetworkRegisterAppForNetworkAttribution()
-```
-This method allows you to [register for attribution](https://developer.apple.com/documentation/storekit/skadnetwork/2943654-registerappforadnetworkattributi?language=objc).
-
-```
-public static void RequestAuthorizationTracking()
-```
-This method allows you to [request the user permission dialogue](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/3547037-requesttrackingauthorization).
-
-```
-public static AuthorizationTrackingStatus GetAuthorizationTrackingStatus()
-```
-This method allows you to check the app tracking transparency (ATT) [authorization status](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/3547038-trackingauthorizationstatus).
