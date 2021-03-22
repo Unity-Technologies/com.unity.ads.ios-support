@@ -36,12 +36,21 @@
     return self.trackingManagerAuthorizationClass != nil && [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSUserTrackingUsageDescription"] != nil;
 }
 
-- (void)trackingAuthorizationRequest {
+- (void)trackingAuthorizationRequest:(callbackFunc) callback {
     if (!self.isAvailable)
-        return;
+	{
+		if (callback != NULL) {
+			callback();
+		}
+		return;
+	}
 
     id handler = ^(NSUInteger result) {
       NSLog(@"Result request tracking authorization : %lu", (unsigned long)result);
+		if (callback != NULL) {
+			callback();
+		}
+
     };
 
     SEL requestSelector = NSSelectorFromString(@"requestTrackingAuthorizationWithCompletionHandler:");
