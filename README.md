@@ -10,8 +10,9 @@ This package supports Apple's SKAdNetwork and AppTrackingTransparency frameworks
 ## SKAdNetwork ID support
 The iOS14 Support package will automatically aggregate an updated [list of advertising sources](https://unityads.unity3d.com/help/ios/skadnetwork-ids) in your game's [_Info.plist_](https://developer.apple.com/documentation/bundleresources/information_property_list) file when you build the application: 
 
-1. [Build](https://docs.unity3d.com/Manual/BuildSettings.html) your project for iOS.
-2. Check the resulting *Info.plist* file to ensure that your `SKAdNetworkItems` are as expected. If necessary, manually add any additional `SKAdNetworkIdentifier` dictionaries to the array.
+1. Create a file named ‘SKAdNetworks’ (no extension). This file can be included anywhere in your file structure. Type a url referencing an online resource into the file, for example either [XML](https://skan.mz.unity3d.com/v2/partner/skadnetworks.plist.xml) or [JSON](https://skan.mz.unity3d.com/v3/partner/skadnetworks.plist.json). Another option is to have a ‘SKAdNetworks.xml’ file [in this format](https://skan.mz.unity3d.com/v2/partner/skadnetworks.plist.xml) or an ‘SKAdNetworks.json’ file [in this format](https://skan.mz.unity3d.com/v3/partner/skadnetworks.plist.json).
+2. [Build](https://docs.unity3d.com/Manual/BuildSettings.html) your project for iOS.
+3. Check the resulting *Info.plist* file to ensure that your `SKAdNetworkItems` are as expected. If necessary, manually add any additional `SKAdNetworkIdentifier` dictionaries to the array.
 
 For more information, see documentation on [modifying the properties list](https://unityads.unity3d.com/help/ios/integration-guide-ios#modifying-the-properties-list).
 
