@@ -35,7 +35,7 @@
     if (!self.isAvailable)
         return;
 
-    SEL requestSelector = NSSelectorFromString(@"updateConversonValue:");
+    SEL requestSelector = NSSelectorFromString(@"updateConversionValue:");
     if ([self.SkAdNetworkClass respondsToSelector:requestSelector]) {
         NSNumber *val = [NSNumber numberWithInteger:conversionValue];
         [self.SkAdNetworkClass performSelector:requestSelector withObject:val];

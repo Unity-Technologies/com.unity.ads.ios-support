@@ -1,0 +1,5 @@
+{
+	"displayName": "01 Context Screen",
+	"description": "This sample showcases the basics of how implement a Context Screen for the iOS App Tracking Transparency feature.",
+	"createSeparatePackage": false
+}
