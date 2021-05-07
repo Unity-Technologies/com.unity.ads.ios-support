@@ -2,10 +2,11 @@
 
 @interface TrackingAuthorizationManager : NSObject
 
+typedef void (*callbackFunc)();
+
 + (TrackingAuthorizationManager *)sharedInstance;
 
 - (BOOL)isAvailable;
-- (void)trackingAuthorizationRequest;
+- (void)trackingAuthorizationRequest:(callbackFunc) callback;
 - (NSUInteger)getTrackingAuthorizationStatus;
-
 @end
