@@ -32,23 +32,43 @@
 }
 
 - (void)updateConversionValue:(NSInteger)conversionValue {
-    if (!self.isAvailable)
+    if (!self.isAvailable) {
+        NSLog(@"updateConversionValue::Not properly initialized");
         return;
+    }
 
-    SEL requestSelector = NSSelectorFromString(@"updateConversionValue:");
-    if ([self.SkAdNetworkClass respondsToSelector:requestSelector]) {
-        NSNumber *val = [NSNumber numberWithInteger:conversionValue];
-        [self.SkAdNetworkClass performSelector:requestSelector withObject:val];
+    id target = self.SkAdNetworkClass;
+    SEL selector = NSSelectorFromString(@"updateConversionValue:");
+    NSMethodSignature * signature = [target methodSignatureForSelector:selector];
+    if (signature) {
+        NSLog(@"updateConversionValue::Invoking conversionValue=%ld", conversionValue);
+        NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:signature];
+        invocation.target = target;
+        invocation.selector = selector;
+        [invocation setArgument:&conversionValue atIndex:2];
+        [invocation invoke];
+    } else {
+        NSLog(@"updateConversionValue::Unknown method signature");
     }
 }
 
 - (void)registerAppForAdNetworkAttribution {
-    if (!self.isAvailable)
+    if (!self.isAvailable) {
+        NSLog(@"registerAppForAdNetworkAttribution::Not properly initialized");
         return;
+    }
 
-    SEL requestSelector = NSSelectorFromString(@"registerAppForAdNetworkAttribution");
-    if ([self.SkAdNetworkClass respondsToSelector:requestSelector]) {
-        [self.SkAdNetworkClass performSelector:requestSelector];
+    id target = self.SkAdNetworkClass;
+    SEL selector = NSSelectorFromString(@"registerAppForAdNetworkAttribution");
+    NSMethodSignature * signature = [target methodSignatureForSelector:selector];
+    if (signature) {
+        NSLog(@"registerAppForAdNetworkAttribution::Invoking");
+        NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:signature];
+        invocation.target = target;
+        invocation.selector = selector;
+        [invocation invoke];
+    } else {
+        NSLog(@"registerAppForAdNetworkAttribution::Unknown method signature");
     }
 }
 
