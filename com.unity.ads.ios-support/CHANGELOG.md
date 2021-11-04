@@ -5,6 +5,11 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2021-09-21
+Do not show Context Screen for iOS versions below 14.5
+Use NSInvocation instead of performSelector for SkAdNetwork methods
+Expose RequestTrackingAuthorization callback
+
 ## [1.0.0] - 2021-04-22
 First Stable Release
 Updates to the Context Screen sample and the README

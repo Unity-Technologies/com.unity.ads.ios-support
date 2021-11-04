@@ -22,7 +22,7 @@ public class Main : MonoBehaviour
         if(!m_Once)
         {
             m_Once = true;
-            ATTrackingStatusBinding.RequestAuthorizationTracking();
+            ATTrackingStatusBinding.RequestAuthorizationTracking(AuthorizationTrackingReceived);
         }
 
         var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
@@ -31,5 +31,9 @@ public class Main : MonoBehaviour
             m_PreviousStatus = status;
             Debug.LogFormat("Tracking status updated: {0}", status);
         }
+    }
+    
+    private void AuthorizationTrackingReceived(int status) {
+        Debug.LogFormat("Tracking status received: {0}", status);
     }
 }

@@ -3,7 +3,8 @@
 #import <dlfcn.h>
 #import <objc/runtime.h>
 #import <sys/utsname.h>
-
+#import "NSInvocation+Convenience.h"
+#import "UASupportPrimitivesBox.h"
 
 @interface SkAdNetworkManager ()
 @property (strong, nonatomic) Class SkAdNetworkClass;
@@ -32,24 +33,21 @@
 }
 
 - (void)updateConversionValue:(NSInteger)conversionValue {
-    if (!self.isAvailable)
+    if (!self.isAvailable) {
+        NSLog(@"SkAdNetwork not available");
         return;
-
-    SEL requestSelector = NSSelectorFromString(@"updateConversionValue:");
-    if ([self.SkAdNetworkClass respondsToSelector:requestSelector]) {
-        NSNumber *val = [NSNumber numberWithInteger:conversionValue];
-        [self.SkAdNetworkClass performSelector:requestSelector withObject:val];
-    }
+     }
+    UASupportPrimitivesBox *index = [UASupportPrimitivesBox newWithBytes: &conversionValue objCType: @encode(NSInteger)];
+    [NSInvocation uads_invokeUsingMethod: @"updateConversionValue:" classType: self.SkAdNetworkClass target: nil args: @[index] ];
 }
 
 - (void)registerAppForAdNetworkAttribution {
-    if (!self.isAvailable)
+    if (!self.isAvailable) {
+        NSLog(@"SkAdNetwork not available");
         return;
-
-    SEL requestSelector = NSSelectorFromString(@"registerAppForAdNetworkAttribution");
-    if ([self.SkAdNetworkClass respondsToSelector:requestSelector]) {
-        [self.SkAdNetworkClass performSelector:requestSelector];
     }
+
+    [NSInvocation uads_invokeUsingMethod: @"registerAppForAdNetworkAttribution" classType: self.SkAdNetworkClass target: nil args: @[] ];
 }
 
 - (BOOL)isAvailable {

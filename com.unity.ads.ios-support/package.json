@@ -1,9 +1,18 @@
 {
 	"name": "com.unity.ads.ios-support",
 	"displayName":"iOS 14 Advertising Support",
-	"version": "1.0.0",
+	"version": "1.2.0",
 	"unity": "2018.4",
 	"description": "Provides support for App Tracking Transparency and SkAdNetwork API newly introduced in Apple iOS 14.\n\nIncludes a sample implementation of a customizable context screen to show before requesting tracking permission.",
 	"dependencies": {
-	}
+	},
+	"_upm": {
+	    "gameService": {
+	      "groupIndex": 4,
+	      "groupName": "Monetization"
+	    },
+	    "supportedPlatforms": [
+	      "iOS"
+	    ]
+  	}
 }

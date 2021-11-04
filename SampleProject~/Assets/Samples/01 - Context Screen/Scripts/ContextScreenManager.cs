@@ -1,5 +1,7 @@
 ﻿using Unity.Advertisement.IosSupport.Components;
 using UnityEngine;
+using System;
+using UnityEngine.iOS;
 
 namespace Unity.Advertisement.IosSupport.Samples
 {
@@ -20,8 +22,10 @@ namespace Unity.Advertisement.IosSupport.Samples
 #if UNITY_IOS
             // check with iOS to see if the user has accepted or declined tracking
             var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
-
-            if (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
+            Version currentVersion = new Version(Device.systemVersion); 
+            Version ios14 = new Version("14.5"); 
+           
+            if (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED && currentVersion >= ios14)
             {
                 var contextScreen = Instantiate(contextScreenPrefab).GetComponent<ContextScreenView>();
 

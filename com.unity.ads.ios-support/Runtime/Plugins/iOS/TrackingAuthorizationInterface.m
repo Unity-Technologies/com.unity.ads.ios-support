@@ -2,8 +2,8 @@
 #import "TrackingAuthorizationManager.h"
 
 
-extern void InterfaceTrackingAuthorizationRequest() {
-    [[TrackingAuthorizationManager sharedInstance] trackingAuthorizationRequest];
+extern void InterfaceTrackingAuthorizationRequest(TrackingAuthorizationCompletion completion) {
+    [[TrackingAuthorizationManager sharedInstance] trackingAuthorizationRequest:completion];
 }
 
 extern NSUInteger InterfaceGetTrackingAuthorizationStatus() {
