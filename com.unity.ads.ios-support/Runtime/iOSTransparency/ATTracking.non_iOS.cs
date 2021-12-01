@@ -11,7 +11,7 @@ namespace Unity.Advertisement.IosSupport
         public static bool SupportediOSVersion => false;
         public static bool IsTrackingAccepted()
         {
-            return false;
+            return true;
         }
         public static bool RequestAuthorizationTracking(Action<TrackingStatus> callback = null)
         {
