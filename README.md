@@ -16,7 +16,7 @@ For more information about iOS 14 technical integration, including this package'
 ### From Unity Package Manager
 
 1. In the Unity Editor, select **Window** > **Package** Manager to open the Package Manager.
-2. Select the **Advertisement** package from the list, then select the most recent verified version.
+2. Select the **iOS 14 Advertising Support** package from the list, then select the most recent verified version.
 3. Click the **Install** or **Update** button.
 
 ## Apple developer API extensions
