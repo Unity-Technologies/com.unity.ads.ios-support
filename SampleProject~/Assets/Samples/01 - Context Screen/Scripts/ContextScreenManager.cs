@@ -22,8 +22,8 @@ namespace Unity.Advertisement.IosSupport.Samples
 #if UNITY_IOS
             // check with iOS to see if the user has accepted or declined tracking
             var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
-            Version currentVersion = new Version(Device.systemVersion); 
-            Version ios14 = new Version("14.5"); 
+            Version ios14 = new Version("14.5");
+            Version currentVersion = Application.isEditor ? ios14 : new Version(Device.systemVersion);
            
             if (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED && currentVersion >= ios14)
             {
