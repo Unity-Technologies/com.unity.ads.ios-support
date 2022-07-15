@@ -38,6 +38,7 @@
 
 - (void)trackingAuthorizationRequest:(TrackingAuthorizationCompletion)completion {
     if (!self.isAvailable) {
+        NSLog(@"RequestTracking was not called. Because NSUserTrackingUsageDescription is not set or ATTrackingManager is not loaded.");
         if (completion != nil) {
             completion(0);
         }
